@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			  <div v-if="type==='A'">
+			  	AAAAAAAAAAAAAAAAAAA
+			  </div>
+			   <div v-else-if="type==='B'">
+			  	BBBBBBBBBBBBBBBBBBBBBBB
+			  </div>
+			   <div v-else-if="type==='C'">
+			  	CCCCCCCCCCCCCCCCCCCC
+			  </div>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				  el:'#app',
+				  data:{
+				  	type:'B'
+				  }
+			})
+		</script>
+	</body>
+</html>

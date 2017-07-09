@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>watch</title>
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>苹果单价：{{pice}}</p>
+			<p>购买数量:{{num}}</p>
+			<p>总价:{{num*pice}}</p>
+			<p><button @click="add">+</button></p>
+			<p><button @click="jian">-</button></p>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					num:1,
+					pice:10
+				},
+				methods:{
+					 add:function(){
+					 	 this.num++
+					 	 
+					 },
+					 jian:function(){
+					 	 this.num--
+					 }
+				},
+				watch:{//wathc一般处理打折 优惠的类似的事件
+					 num:function(newVal,oldVal){
+					 	 if(newVal<1){
+					 	 	this.num=1
+					 	 }
+					 	 
+					 }
+				}
+				
+				
+			})
+		</script>
+	</body>
+</html>

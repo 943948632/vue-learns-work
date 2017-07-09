@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>v-on</title>
+		<script src="../js/vue2.0.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p >{{a}}</p>
+			<p><button v-on:click='jia'>+1</button></p>
+			<p><button @click='jian'>-1</button></p>
+			<p><input type="" name="" id="" value="" @keyup.113="onEnter" v-model="b" /></p>
+			//@keyup.113 这是f2
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					a:10,
+					b:0
+				},
+				methods:{
+					jia:function(){
+						this.a++
+					},
+					jian:function(){
+						this.a--
+					},
+					onEnter:function(){
+						this.a=this.a+parseInt(this.b)
+					}
+					
+				}
+			})
+		</script>
+	</body>
+</html>

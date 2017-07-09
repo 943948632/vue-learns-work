@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-resource </title>
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+	</head>
+
+	<body>
+		<div id="app">
+              {{message}}
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: "#app",
+				data: {
+                    message:'heelo'
+				},
+				beforeMount: function() {
+					console.log('第3个生命周期  挂载之前');
+					// GET /someUrl
+					this.$http.get('https://staging.tophold.com/api/v2/orders/feeds?page=1&per_page=20&offset=0').then(response => {
+						  console.log(response.body)
+						  this.message=response
+						// success callback
+					}, response => {
+						// error callback
+					});
+				},
+			})
+		</script>
+	</body>
+
+</html>

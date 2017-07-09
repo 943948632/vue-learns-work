@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>v-model</title>
+		<script src="../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1>v-model</h1>
+			<div >
+				 <input type="" name="" id="" value="" v-model="text1" /><br />
+			  <input type="" name="" id="" value="" v-model.lazy='text1'/><br />
+			 <input type="" name="" id="" value="" v-model.trim='text1'/><br />
+			</div>
+			<h1>复选</h1>
+			 <input type="checkbox" name="" id="" value=""  v-model="zx"/>{{zx}}
+			<hr />
+			
+			<h2>
+				jack<input type="checkbox"  id="jack" value="jack"  v-model="zxarry"/>
+				<!--<labe for='jack'>jack</label>-->
+					
+					mack<input type="checkbox"  id="mack" value="mack"  v-model="zxarry"/>
+				<!--<labe for='mack'>mack</label>-->
+					
+					ser<input type="checkbox"  id="ser" value="ser"  v-model="zxarry"/>
+				<!--<labe for='ser'>ser</label>-->
+					{{zxarry}}
+				
+			</h2>
+			<h1>单选</h1>
+			<input type="radio" id="one" value="true" v-model="danxuan" />
+			<!--<labe for=one>true</label>-->
+				
+				<input type="radio" id="two" value="false" v-model="danxuan" />
+			<!--<labe for=two>false</label>-->
+				<p>{{danxuan}}</p>
+				
+				<hr />
+				
+				<select  v-model="dsfsaf">
+					<option value="a">a</option>
+					<option value="b">b</option>
+					<option value="c">c</option>
+					<option value="d">d</option>
+				</select>
+				<p>{{dsfsaf}}</p>
+				<h1>多选 按住ctrl</h1>
+				<select  v-model="duo" multiple>
+					<option value="a">a</option>
+					<option value="b">b</option>
+					<option value="c">c</option>
+					<option value="d">d</option>
+				</select>
+				<p>{{duo}}</p>
+				
+			
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data:{
+					text1:'84561',
+					zx:true,
+					zxarry:[],
+					danxuan:'',
+					dsfsaf:'',
+					duo:[]
+				}
+			})
+		</script>
+	</body>
+</html>

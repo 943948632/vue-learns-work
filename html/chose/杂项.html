@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<hello></hello>
+			<world></world>
+		</div>
+		<script type="text/javascript">
+			  Vue.component('hello',{
+			  	  template:'<div> 全局化注册</div>'
+			  })
+			  worldworld={
+			  	   template:'<div>{{this.$parent.message}} 局部化注册</div>'
+			  }
+			  new Vue({
+			  	  el:"#app",
+			  	  data:{
+			  	  	   message:'hellow'
+			  	  },
+			  	  components:{
+			  	  	'world':worldworld
+			  	  }
+			  })
+		</script>
+	</body>
+</html>

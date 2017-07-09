@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+		<div id="footer">
+			
+		</div>
+		<script type="text/javascript">
+			var myheader=Vue.extend({
+				template:'<p>我是头部</p>',
+				data:function(){
+					 return {
+					 	messsages:'hellowHes'
+					 }
+				}
+			})
+			var footer=Vue.extend({
+				template:'<p>我是底部</p>',
+				data:function(){
+					 return {
+					 	messsages:'hellowH56263513es'
+					 }
+				}
+			})
+			new myheader().$mount('#app');
+			new footer().$mount('#footer');
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>v-text & v-html</title>
+		<script src="../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h2 v-text="message"></h2>
+			<h1 v-html="messagesdf"></h1>
+			
+			
+		</div>
+		<script type="text/javascript">
+				new Vue({
+					el:'#app',
+					  data:{
+					  	  message:"hellow world",
+					  	  messagesdf:'<h4>看你会</h4>'
+					  }	  
+				})
+			</script>
+	</body>
+</html>

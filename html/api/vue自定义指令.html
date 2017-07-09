@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title> vue hello word</title>
+		
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	   <style type="text/css">
+	   	#color{
+	   		color: red;
+	   	}
+	   </style>
+	</head>
+
+	<body>
+		<h1>自定义指令</h1>
+		<div id="app">
+			<div v-wos='color' id="color">
+				{{number}}
+			</div>
+			<button @click="jia">+</button>
+			
+		</div>
+		<button onclick="jiebang()">解绑</button>
+		<script type="text/javascript">
+		function jiebang(){
+				  vm.$destroy()
+			}
+		Vue.directive('wos',{
+				bind:function(el,binding,vnode,b){//被绑定
+					console.log('1---bind')
+					console.log(el+'========='+binding+'============='+vnode+"="+b)
+					el.style='binding.value'
+				},
+				inserted:function(){//绑定到节点
+					console.log('2---inserted')
+				},
+				updata:function(el,binding,vnode,b){//组件更新
+					console.log('3---updata')
+					console.log(el+'========='+binding+'============='+vnode+"="+b)
+					el.style='color:blue'
+				},
+				componentUpdated:function(el,binding,vnode,b){
+					//组件更新完成
+					console.log('4---componentUpdated');
+					el.style='color:blue'
+				},
+				unbind:function(){//解绑
+					console.log('5---unbind')
+				}
+			})
+			var vm=new Vue({
+				el: '#app',
+				data: {
+					number:10,
+					color:'red'	
+				},
+				methods:{
+					  jia:function(){
+					  	this.number++
+					  }
+				}
+			})
+				
+		</script>
+	</body>
+
+</html>

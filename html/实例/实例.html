@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>$ 实例</title>
+		<script src="../../js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1>{{message}}</h1>
+		</div>
+		<script type="text/javascript">
+			var vm=new Vue({
+				  el:'#app',
+				  data:{
+				  	  message:'我是vue'
+				  },
+				  mounted:function(){
+				  	  console.log('')
+				  }
+			})
+			console.log(vm)
+		</script>
+	</body>
+</html>

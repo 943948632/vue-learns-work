@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<comment v-bind:is='who'></comment>
+		</div>
+		<script type="text/javascript">
+			  pA={
+			  	  template:'<div>this is PA</div>'
+			  }
+			   pB={
+			  	  template:'<div>this is PB</div>'
+			  }
+			    pC={
+			  	  template:'<div>this is PC</div>'
+			  }
+			   
+			 new Vue({
+			 	el:'#app',
+			 	data:{
+			 		who:'pA'
+			 	},
+			 	components:{
+			 		'pA':pB
+			 	}
+			 })
+		</script>
+	</body>
+</html>

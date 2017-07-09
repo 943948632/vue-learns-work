@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<h1>v-for</h1>
+			<ul>
+				<li v-for="item in lista">{{item}}</li>
+			</ul>
+			<ul>
+				<li v-for="(index,value) in lists">{{index}},{{value}}</li>
+			</ul>
+			
+			<ul>
+				<li v-for="(index,value) in devst">{{value}}{{index.name}},{{index.age}}</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: {
+					list:[
+					
+					1,5,6,7,8,9,2,3,4
+					],
+					lists:{
+					"addressId": "100003",
+					"userName": "JackBean",
+					"streetName": "北京市朝阳区朝阳公园3",
+					"postCode": "100001",
+					"tel": "12345678901",
+					"isDefault": false
+					},
+					
+					
+					st:[
+			        { name:'wos',age:'356'},
+			        { name:'woss',age:'355'},
+			        { name:'wosds',age:'355'},
+			        { name:'woasds',age:'3525'},
+					]
+				},
+				computed:{
+					  lista:function(){
+					  	  return this.list.sort(function(a,b){
+					  	  	  return a-b;
+					  	  })
+					  },
+					  devst:function(){
+					  	  return sortByKey(this.st,'age');
+					  }
+					 
+				}
+			})
+			function sortByKey(array,key){
+				 return array.sort(function(c,d){
+				 	  var x=c[key];
+				 	  var y=d[key];
+				 	  return((x<y)?-1:(x>y)?1:0);
+				 })
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>v-bind</title>
+		<script src="../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.active{
+				color: red;
+			}
+			.actived{
+				color: blue;
+			}
+			.activeds{
+				font-size: 100px;
+			}
+		</style>
+			
+	</head>
+
+	<body>
+		v-nind主题要对标签绑定
+		<div id="app">
+			<img v-bind:src="msg" v-bind:width="width" />
+			绑定class
+		<div v-bind:class="{ active: isActive }">sadsads</div>
+		
+		<div v-bind:class="[actived,activeds ]">sadsads</div>
+		<!--<div v-bind:class="{ isActive? activeds:actived }">sadsads</div>-->
+		<div style="{color: red}">
+			dscdsvds
+			
+		</div>
+			
+		</div>
+		
+
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data:{
+					msg: 'https://ss2.baidu.com/73Z1bjeh1BF3odCf/it/u=331642910,199523927&fm=202',
+					width: '20',
+					isActive:true,
+					actived:"actived",
+					activeds:"activeds"
+					
+					
+
+				}
+			})
+		</script>
+	</body>
+
+</html>

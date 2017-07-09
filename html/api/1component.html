@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<world v-bind:here='message'></world>
+		</div>
+		<script type="text/javascript">
+			worldworld={
+				template:'<div>wwwwwwwwww{{here}}</div>',
+				props:['here']
+			}
+			 new Vue({
+			 	el:'#app',
+			 	data:{
+			 		 message:'UAS'
+			 	},
+			 	components:{
+			 		'world':worldworld
+			 	}
+			 })
+		</script>
+	</body>
+</html>

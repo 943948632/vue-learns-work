@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>生命周期</title>
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{message}}</p>
+			<button @click="jia">+</button>
+			
+		</div>
+		<button onclick="xiaohui()">destroyed</button>
+		
+		<script type="text/javascript">
+			function xiaohui(){
+			  	  		vm.$destroy()
+			  	  	}
+			var vm= new Vue({
+			  	  el:'#app',
+			  	  data:{
+			  	  	message:1,
+			  	  },
+			  	  methods:{
+			  	  	jia:function(){
+			  	  		this.message++
+			  	  	}
+			  	  	
+			  	  },
+			  	  beforeCreate:function(){
+			  	  	console.log('第1个生命周期  初始化之后')
+			  	  },
+			  	  created:function(){
+			  	  	   console.log('第2个生命周期  创建完成')
+			  	  },
+			  	   beforeMount:function(){
+			  	  	   console.log('第3个生命周期  挂载之前')
+			  	  },
+			  	   mounted:function(){
+			  	  	   console.log('第4个生命周期  被创建   这个时候可以对dom操做')
+			  	  },
+			  	   beforeUpdate:function(){
+			  	  	   console.log('第5个生命周期  数据更新前')
+			  	  },
+			  	   updated:function(){
+			  	  	   console.log('第6个生命周期  被更新后')
+			  	  },
+			  	  
+			  	   activated:function(){
+			  	  	   console.log('第7个生命周期  ')
+			  	  },
+			  	   deactivated:function(){
+			  	  	   console.log('第8个生命周期  ')
+			  	  },
+			  	   beforeDestroy:function(){
+			  	  	   console.log('第9个生命周期  销毁之前')
+			  	  },
+			  	   destroyed:function(){
+			  	  	  console.log('第10个生命周期  销毁之后')
+			  	  },
+			  	  
+			  	  
+			  })
+		</script>
+	</body>
+</html>

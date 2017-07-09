@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>mixins混入</title>
+		<script src="../../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{message}}
+			<p><button @click="jia">+</button></p>
+		</div>
+		<script type="text/javascript">
+			Vue.mixin({
+				 created:function(){
+				 	  console.log("我是全局混入的")
+				 }
+			})
+			var aaa={
+				  data:{
+				  	  message:'mixins'
+				  },
+				   created:function(){
+				   	   console.log("我被混入")
+				   },
+				   methods:{
+				   	jia:function(){
+				   		 console.log("我被加了-混入的")
+				   	}
+				   }
+			}
+			new Vue({
+				  el:'#app',
+				  data:{
+				  	  message:'hellow'
+				  },
+				  methods:{
+				  	jia:function(){
+				  		console.log("我倍加了")
+				  	},
+				  	created:function(){
+				   	   console.log("我是构造器里原装的")
+				   },
+				  },
+				  mixins:[aaa]
+			})
+		</script>
+	</body>
+</html>

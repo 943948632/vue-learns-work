@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/vue2.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<h1>v-for</h1>
+			<ul>
+				<li v-for="(bbb,index) in devst">
+					{{index}}
+					{{bbb.name}}
+					{{bbb.age}}
+				</li>
+			</ul>
+		
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: {
+					st:[
+					{name:'wosv',age:'35'},
+					{name:'woss',age:'28'},
+					{name:'wosa',age:'34'},
+					{name:'wosx',age:'29'},
+					{name:'wosz',age:'18'},
+					]
+				},
+				computed:{
+					  devst:function(){
+					  	return sortByKey(this.st,'age')
+					  }
+				}
+			})
+			function sortByKey(array,key){
+				 return array.sort(function(c,d){
+				 	  var x=c[key];
+				 	  var y=d[key];
+				 	  return((x<y)?-1:(x>y)?1:0);
+				 })
+			}
+		</script>
+	</body>
+
+</html>
